@@ -38,3 +38,4 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'haml'
+gem 'simple_form'
