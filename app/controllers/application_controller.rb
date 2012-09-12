@@ -1,3 +1,4 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  # XXX Uh-oh, shouldn't stop protecting from forgery...
+#  protect_from_forgery
 end
