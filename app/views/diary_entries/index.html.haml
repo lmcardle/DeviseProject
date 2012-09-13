@@ -1,4 +1,4 @@
 %ul
   - for entry in @entries
     %li
-      = entry.title
+      #{entry.title} #{link_to "Destroy", diary_entry_path(entry), :method => :delete }

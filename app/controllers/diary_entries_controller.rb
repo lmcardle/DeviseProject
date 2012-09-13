@@ -29,4 +29,12 @@ class DiaryEntriesController < ApplicationController
 
     redirect_to diary_entries_path
   end
+
+  def destroy
+    @diary_entry = DiaryEntry.find(params[:id])
+    if @diary_entry.user == current_user
+      @diary_entry.destroy
+    else
+    end
+  end
 end
