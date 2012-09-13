@@ -14,3 +14,13 @@ end
 def index_diary_entries(user, password)
   entries = site_resource(user, password)['diary_entries.json'].get
 end
+
+def create_diary_entry(user, password, title)
+  payload = {
+    :article => {
+      :title => title
+    }
+  }
+
+  entries = site_resource(user, password)['diary_entries.json'].post(payload)
+end
