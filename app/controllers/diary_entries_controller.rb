@@ -9,6 +9,15 @@ class DiaryEntriesController < ApplicationController
     respond_with(@entries)
   end
 
+  def show
+    @entry = DiaryEntry.find(params[:id])
+    if @entry.user == current_user
+      respond_with(@entry)
+    else
+      raise ActionController::RoutingError.new('Not Found')
+    end
+  end
+
   def new
     @diary_entry = DiaryEntry.new
   end
