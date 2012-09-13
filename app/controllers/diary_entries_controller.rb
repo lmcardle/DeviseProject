@@ -25,9 +25,10 @@ class DiaryEntriesController < ApplicationController
   def create
     @diary_entry = DiaryEntry.new(params[:diary_entry])
     @diary_entry.user_id = current_user.id
-    @diary_entry.save
 
-    redirect_to diary_entries_path
+    if @diary_entry.save
+      respond_with(@diary_entry)
+    end
   end
 
   def destroy
